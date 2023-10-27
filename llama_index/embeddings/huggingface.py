@@ -65,7 +65,7 @@ class HuggingFaceEmbedding(BaseEmbedding):
         self._device = device or infer_torch_device()
 
         cache_folder = cache_folder or get_cache_dir()
-
+        print("******", token)
         if model is None:
             model_name = model_name or DEFAULT_HUGGINGFACE_EMBEDDING_MODEL
             self._model = AutoModel.from_pretrained(
