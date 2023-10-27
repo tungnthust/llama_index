@@ -52,6 +52,7 @@ class HuggingFaceEmbedding(BaseEmbedding):
         cache_folder: Optional[str] = None,
         device: Optional[str] = None,
         callback_manager: Optional[CallbackManager] = None,
+        token: str = None
     ):
         try:
             from transformers import AutoModel, AutoTokenizer
@@ -68,7 +69,7 @@ class HuggingFaceEmbedding(BaseEmbedding):
         if model is None:
             model_name = model_name or DEFAULT_HUGGINGFACE_EMBEDDING_MODEL
             self._model = AutoModel.from_pretrained(
-                model_name, cache_dir=cache_folder
+                model_name, cache_dir=cache_folder, token=token
             ).to(self._device)
         else:
             self._model = model
@@ -78,7 +79,7 @@ class HuggingFaceEmbedding(BaseEmbedding):
                 model_name or tokenizer_name or DEFAULT_HUGGINGFACE_EMBEDDING_MODEL
             )
             self._tokenizer = AutoTokenizer.from_pretrained(
-                tokenizer_name, cache_dir=cache_folder
+                tokenizer_name, cache_dir=cache_folder, token=token
             )
         else:
             self._tokenizer = tokenizer
