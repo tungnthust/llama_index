@@ -69,7 +69,7 @@ class HuggingFaceEmbedding(BaseEmbedding):
         if model is None:
             model_name = model_name or DEFAULT_HUGGINGFACE_EMBEDDING_MODEL
             self._model = AutoModel.from_pretrained(
-                model_name, cache_dir=cache_folder, token=token
+                model_name, token=token, cache_dir=cache_folder
             ).to(self._device)
         else:
             self._model = model
@@ -79,7 +79,7 @@ class HuggingFaceEmbedding(BaseEmbedding):
                 model_name or tokenizer_name or DEFAULT_HUGGINGFACE_EMBEDDING_MODEL
             )
             self._tokenizer = AutoTokenizer.from_pretrained(
-                tokenizer_name, cache_dir=cache_folder, token=token
+                tokenizer_name, token=token, cache_dir=cache_folder
             )
         else:
             self._tokenizer = tokenizer
