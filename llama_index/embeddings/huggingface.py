@@ -65,11 +65,11 @@ class HuggingFaceEmbedding(BaseEmbedding):
         self._device = device or infer_torch_device()
 
         cache_folder = cache_folder or get_cache_dir()
-        print("******", token)
+        model_kwargs = {'token': token}
         if model is None:
             model_name = model_name or DEFAULT_HUGGINGFACE_EMBEDDING_MODEL
             self._model = AutoModel.from_pretrained(
-                model_name, token=token, cache_dir=cache_folder
+                model_name, cache_dir=cache_folder, **model_kwargs
             ).to(self._device)
         else:
             self._model = model
@@ -79,7 +79,7 @@ class HuggingFaceEmbedding(BaseEmbedding):
                 model_name or tokenizer_name or DEFAULT_HUGGINGFACE_EMBEDDING_MODEL
             )
             self._tokenizer = AutoTokenizer.from_pretrained(
-                tokenizer_name, token=token, cache_dir=cache_folder
+                tokenizer_name, cache_dir=cache_folder, **model_kwargs
             )
         else:
             self._tokenizer = tokenizer
