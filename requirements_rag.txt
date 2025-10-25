@@ -1,0 +1,25 @@
+# Advanced RAG Pipeline Requirements
+
+# Core LlamaIndex
+llama-index-core>=0.14.5
+llama-index-embeddings-huggingface>=0.5.0
+llama-index-llms-huggingface>=0.6.0
+
+# HuggingFace and Transformers
+transformers>=4.40.0
+torch>=2.0.0
+sentence-transformers>=2.5.0
+accelerate>=0.27.0
+bitsandbytes>=0.43.0
+
+# BM25 for hybrid search
+rank-bm25>=0.2.2
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Optional but recommended
+einops>=0.7.0
+sentencepiece>=0.2.0
+protobuf>=3.20.0

@@ -1,0 +1,4 @@
+Question,A,B,C,D
+Linh kiện nào có chức năng hạn chế dòng điện chạy qua mạch?,Điện trở,Tụ điện,Transistor,Diode
+Tóm tắt các thành phần có thể chèn vào Slide và cách tùy chỉnh giao diện/hiệu ứng trình chiếu.,Chỉ chèn được văn bản,Chỉ chèn được hình ảnh và video,"Có thể chèn văn bản, hình ảnh, âm thanh, video nhưng không đổi nền","Có thể chèn văn bản, hình, video, âm thanh; thay đổi màu nền, Template; tạo hiệu ứng chữ, hình, chuyển Slide"
+"Nếu dòng điện cực đại của nguồn 230 VAC là 0.25 A, công suất tiêu thụ cực đại của RCE khoảng bao nhiêu?",25 W,"57,5 W",110 W,250 W

@@ -36,3 +36,16 @@ llama-index-core/llama_index/core/_static
 **/*.egg-info/
 **/.coverage
 **/coverage.xml
+
+# RAG Pipeline specific
+storage/
+test_storage/
+storage_cpu/
+storage_custom/
+answers.txt
+structured_answers.json
+rag_pipeline.log
+/tmp/test_documents/
+*.pyc
+__pycache__/
+.pytest_cache/
